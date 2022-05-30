@@ -1,31 +1,24 @@
 #include <iostream>
-#include <math.h> 
-
 using namespace std;
-int x = 4;
+int x =4;
+
+
+void f1(int a, int b){
+    cout  << "f1(int a, int b) got called!\n"; 
+}
+
 
 void f1(){
-    int x = 5;
-    cout << x<<endl;
+    cout  << "f1() got called!\n"; 
 }
 
-void f2(); // function decleration
+void f1(int a){
+    cout  << "f1(int a) got called!\n"; 
+}
 
 int main () {
-    {
-        x = 10;
-    }
-    cout << x<<endl; // 10
-    int x = 6;
-    cout << x<<endl; // 6
-  
-    f1(); //5
-    f2();
-    
+    f1();
+    f1(4);
+    f1(4, 5);
     return 0;
-}
-
-void f2(){
-    x = 623;
-    cout<<x;
 }
