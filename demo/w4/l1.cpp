@@ -2,19 +2,30 @@
 #include <math.h> 
 
 using namespace std;
+int x = 4;
 
+void f1(){
+    int x = 5;
+    cout << x<<endl;
+}
 
+void f2(); // function decleration
 
 int main () {
-
-    // cout << "start executing this file from this function - main!\n";
-    cout << sqrt(27)<< endl;
-    cout << pow(4, 5) << endl;
-    cout << fabs(-5.2) << endl;
-
-    cout<< ceil(5.6) << endl;
-    cout<< floor(5.6) << endl;
-    cout<< round(5.5) << endl;
-
+    {
+        x = 10;
+    }
+    cout << x<<endl; // 10
+    int x = 6;
+    cout << x<<endl; // 6
+  
+    f1(); //5
+    f2();
+    
     return 0;
+}
+
+void f2(){
+    x = 623;
+    cout<<x;
 }
