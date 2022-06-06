@@ -16,15 +16,27 @@ int main()
     const int x = 6;
     int grades[x];
     grades[0] = 99;
-    grades[1] = 80;
-    // ...
+    grades[1] = 50;
+    grades[2] = 60;
+    grades[3] = 40;
+    grades[4] = 20;
     grades[5] = 87;
-    // cout << grades[1];
-    for (int i = 0; i < 6; i++)
-        cin >> grades[i];
-    for (int i = 0; i < 6; i++)
-        cout << grades[i] << endl;
+    int sum = 0;
+    int min = INT_MAX;
+    int max = INT_MIN;
 
-    // x = 10;
+    for (int i = 0; i < 6; i++)
+    {
+        sum += grades[i];
+        if (grades[i] > max)
+            max = grades[i];
+
+        if (grades[i] < min)
+            min = grades[i];
+    }
+
+    cout << sum << endl;
+    cout << min << endl;
+    cout << max << endl;
     return 0;
 }
