@@ -2,17 +2,45 @@
 
 using namespace std;
 
-void f1(int &a)
-{
-    a = a + 1; // 11
+int sum_(int arr[]){
+    int sum = 0;
+
+    for (int i = 0; i < 6; i++)
+    {
+        sum += arr[i];
+    }
+
+    return sum;
+}
+
+int min_(int arr[]){
+    int min = INT_MAX;
+    
+    for (int i = 0; i < 6; i++)
+    {
+        if (arr[i] < min)
+            min = arr[i];
+    }
+
+    return min;
+}
+
+
+int max_(int arr[]){
+    int max = INT_MIN;
+
+    for (int i = 0; i < 6; i++)
+    {
+        if (arr[i] > max)
+            max = arr[i];
+    }
+
+    return max;
 }
 
 int main()
 {
-    // int a = 99;
 
-    // int b = 80;
-    // int c = 87;
     const int x = 6;
     int grades[x];
     grades[0] = 99;
@@ -21,22 +49,9 @@ int main()
     grades[3] = 40;
     grades[4] = 20;
     grades[5] = 87;
-    int sum = 0;
-    int min = INT_MAX;
-    int max = INT_MIN;
 
-    for (int i = 0; i < 6; i++)
-    {
-        sum += grades[i];
-        if (grades[i] > max)
-            max = grades[i];
-
-        if (grades[i] < min)
-            min = grades[i];
-    }
-
-    cout << sum << endl;
-    cout << min << endl;
-    cout << max << endl;
+    cout << sum_(grades) << endl;
+    cout << min_(grades) << endl;
+    cout << max_(grades) << endl;
     return 0;
 }
