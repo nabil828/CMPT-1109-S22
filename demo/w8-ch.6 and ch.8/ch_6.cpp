@@ -16,13 +16,16 @@ int main(){
         cout << "something went wrong";
         return -1;
     }
-    inStream >> x;
+    while( inStream >> x){
+            cout << x << endl;
+    }
+
     inStream.close(); // ?
     // cout << x;
 
-    ofstream outStream;
-    outStream.open("output.txt");
-    outStream << x;
+    // ofstream outStream;
+    // outStream.open("output.txt");
+    // outStream << x;
 
 
     return -1;
