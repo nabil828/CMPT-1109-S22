@@ -13,9 +13,11 @@ int main (){
     inStream.open("input.txt");
     // inStream.get(x);
     // inStream.get(y);
+    char arr[20];
+    int i = 0;
     while(!inStream.eof()){
-        inStream.get(x);
-        cout << x;
+        inStream.get(arr[i]);
+        i = i +1;
     }
     cout <<x<<endl<<y;
     return 666;
