@@ -11,12 +11,13 @@ int main(){
 
 
     ifstream   inStream;
-
     inStream.open("input.txt");
-
     inStream >> x;
+    // cout << x;
 
-    cout << x;
+    ofstream outStream;
+    outStream.open("output.txt");
+    outStream << x;
 
 
     return -1;
