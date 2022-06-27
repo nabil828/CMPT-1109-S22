@@ -12,7 +12,12 @@ int main(){
 
     ifstream   inStream;
     inStream.open("input.txt");
+    if(inStream.fail()){
+        cout << "something went wrong";
+        return -1;
+    }
     inStream >> x;
+    inStream.close(); // ?
     // cout << x;
 
     ofstream outStream;
