@@ -23,16 +23,32 @@ int main()
         cin >> question;
     
         // provide an answer - todo 
-        string answer;;
-        if(inStream >> answer)
-            cout << answer << endl;
-        else    {
-            inStream.close();
-            inStream.open("answers.txt");
-            inStream >> answer;
-            cout << answer << endl;
-        }
+        // string anAnswer;;
+        char anAnswer[100];
+
+        // if(inStream >> anAnswer)
+        //     cout << anAnswer << endl;
+        // else    {
+        //     inStream.close();
+        //     inStream.open("answers.txt");
+        //     inStream >> anAnswer;
+        //     cout << anAnswer << endl;
+        // }
+        int counter = 0;
+        // read the next char.
+        inStream.get(anAnswer[counter++]); 
+        while(!inStream.eof()){
+            // I need to read the whole line 
+            if(anAnswer[counter-1] == '\n'){
+                // provide an answer
+                cout << anAnswer << endl;
+                counter = 0;
+            }
             
+            // continue reading the character
+            // read the next char.
+            inStream.get(anAnswer[counter++]);
+        }    
     }
 
     return -77;
