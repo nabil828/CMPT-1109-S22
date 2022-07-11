@@ -11,6 +11,19 @@ class Car
     string make; // private  data member
 
 public:
+    // default constructor 
+    Car(){
+        year = 2022;
+        model = "X";
+        make = "Nissan1";
+    }
+     // constructor 
+    Car(int a){
+        year = a;
+        model = "X";
+        make = "Nissan2";
+    }
+
     // member function
     void set_year(int a)
     {
@@ -22,6 +35,15 @@ public:
     {
         return year;
     }
+    
+    // member function
+    string get_make()
+    {
+        return make;
+    }
+
+    
+
 };
 
 int main()
@@ -38,7 +60,18 @@ int main()
     y.set_year(2015);
     // y.model = "Civiv";
 
-    cout << y.get_year(); // 2015
+    // cout << y.get_year(); // 2015
 
+    Car z; // default constuctor will be called
+    cout << z.get_make() << endl; // Nissan1
+
+
+    Car w(2017); // 2nd constuctor will be called
+    cout << w.get_make() << endl; // Nissan2
+    cout << w.get_year() << endl; // 2017
+
+
+
+    
     return -10;
 }
