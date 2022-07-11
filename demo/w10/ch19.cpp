@@ -46,32 +46,16 @@ public:
 
 };
 
+void f1(Car & aCar){
+    aCar.set_year(2011);
+}
+
 int main()
 {
     Car x;
-    // x.make = "Ford";
-    // x.year = 2012;
     x.set_year(2012);
-    // x.model = "Explorer";
+    f1(x); // call by reference
+    cout << x.get_year(); // ?
 
-    Car y;
-    // y.make = "Honda";
-    // y.year = 2015;
-    y.set_year(2015);
-    // y.model = "Civiv";
-
-    // cout << y.get_year(); // 2015
-
-    Car z; // default constuctor will be called
-    cout << z.get_make() << endl; // Nissan1
-
-
-    Car w(2017); // 2nd constuctor will be called
-    cout << w.get_make() << endl; // Nissan2
-    cout << w.get_year() << endl; // 2017
-
-
-
-    
     return -10;
 }
