@@ -4,43 +4,41 @@ using namespace std;
 
 class Car
 {
-// public: // accessor [private/public/protected]
-    int year; // data member
-    string model;
-    string make;
+// private:
+    // public: // accessor [private/public/protected]
+    int year; // private  data member
+    string model; // private  data member
+    string make; // private  data member
 
-    // void f2();// member function
+public:
+    // member function
+    void set_year(int a)
+    {
+        year = a;
+    }
+
+    // member function
+    int get_year()
+    {
+        return year;
+    }
 };
-
-void f1(Car a){
-    cout <<a.make;
-    // a.year = 2022;
-    // // return a;
-}
 
 int main()
 {
     Car x;
-    x.make = "Ford";
-    x.year = 2012;
-    x.model = "Explorer";
+    // x.make = "Ford";
+    // x.year = 2012;
+    x.set_year(2012);
+    // x.model = "Explorer";
 
     Car y;
-    y.make = "Honda";
-    y.year = 2015;
-    y.model = "Civiv";
+    // y.make = "Honda";
+    // y.year = 2015;
+    y.set_year(2015);
+    // y.model = "Civiv";
 
-    // x.model = y.model;
-    Car arr[2];
-    arr[0].make = "BMW";
-    arr[1].make = "Toyota";
-    
-    // f1(arr[0]); // BMW
-
-    Car *p1;
-    p1 = &y;
-    (*p1).year = 2016;
-    cout << y.year; // 2016
+    cout << y.get_year(); // 2015
 
     return -10;
 }
