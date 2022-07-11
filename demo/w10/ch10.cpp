@@ -25,9 +25,9 @@ public:
     }
 
     // member function
-    void set_year(int a)
+    void set_year(int year)
     {
-        year = a;
+        (*this).year = year;
     }
 
     // member function
@@ -55,7 +55,7 @@ int main()
     Car x;
     x.set_year(2012);
     f1(x); // call by reference
-    cout << x.get_year(); // ?
+    cout << x.get_year(); // 2011
 
     return -10;
 }
