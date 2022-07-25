@@ -74,7 +74,16 @@ public:
     
     }
 
-    void operator=(Movie x){
+    //copy constructor 
+    Movie(Movie &y){
+        // deep copy
+        this->arr = new int[5];
+        for(int i = 0; i < 5; i++){
+            this->arr[i] = y.arr[i];
+        }
+    }
+    //Operator Equal Member function
+    void operator=(Movie x){ // x(movie2)
         // deep copy
         for(int i = 0; i < 5; i++){
             this->arr[i] = x.arr[i];
@@ -111,7 +120,9 @@ int main()
     cout << movie2.getMBAA() << endl;    //"PG-13"
     cout << movie2.getAverage() << endl; // 3.8
 
-    movie1 = movie2;
-    movie1.getAverage() // 3.8;
+    movie1 = movie2; // movie1.operator=(movie2);
+    movie1.addRating(5);
+    cout << movie2.getAverage()<<endl; // 3.8;
+    cout << movie1.getAverage()<<endl; // 3.9;
     return -100;
 }
