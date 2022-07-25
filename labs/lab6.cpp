@@ -56,6 +56,15 @@ int main()
 
     } while (selection != 4);
 
+    delete arr[0];
+    
+    delete arr[1];
+    
+    delete arr[2];
+    
+    delete arr[3];
+    
+    delete arr;
     return 223;
 }
 
