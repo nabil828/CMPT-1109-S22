@@ -3,12 +3,12 @@
 
 using namespace std;
 
-int fact(int n){ // n!
-    int result = 1;
-    for (int  i = 1; i <= n; i++){
-        result *= i;
-    }
-    return result;
+int fact(int n)
+{ // n!
+    if (n == 1 || n == 0)
+        return 1; // basic step
+    else
+        return n * fact(n - 1); // recursive step
 }
 
 int main()
